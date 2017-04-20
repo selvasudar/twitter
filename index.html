@@ -1,0 +1,2062 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {           
+             
+            var bottom = $('.twit-main').height();           
+            
+
+        $(window).scroll(function (event) {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+                    if ($(window).scrollTop() <=  bottom-100) {
+                        
+                    var div_height = $(".twit-main").height() + 400;
+                    $(".twit-main").height(div_height);
+                }
+                else{
+                    event.stopPropogation();
+                }
+            }
+            
+        });
+        
+ });
+        $(window).load(function() {            
+             $(".twit-main").height($(window).height()+100);
+        });
+    </script>
+   <script type="text/javascript">
+ //        $(document).ready(function () {                        
+
+ //            var div_bottom = $('.twit-main').height();       
+           
+ //             var bot_pos=$(window).scrollTop() + $(window).height();
+ //             var doc_height=$(document).height();
+
+ //        $(window).scroll(function (event) {
+ //            if(bot_pos==doc_height){
+ //                //  var div_height = $(".twit-main").height() + 400;
+ //                // $(".twit-main").height(div_height);
+ //                alert("bottom");
+               
+ //            }
+ //            else{
+ //                event.stopPropogation();
+                
+ //            }
+ //        });
+        
+        
+ // });
+ //        $(window).load(function() {            
+ //             $(".twit-main").height($(window).height()+100);
+ //        });
+ </script>
+    <style type="text/css">
+        .twit-main {
+            border: 1px solid #e1e9ec;
+            border-radius: 5px;
+            float: left;
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+            .twit-main a {
+                text-decoration: none;
+            }
+
+                .twit-main a:hover {
+                    text-decoration: underline;
+                }
+
+        .twit-pfl span.acc_name a {
+            color: #292f33;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: Arial;
+        }
+
+        .twit-pfl span {
+            float: left;
+            width: auto;
+        }
+
+            .twit-pfl span a {
+                float: left;
+                width: auto;
+                padding-left: 4px;
+                font-size: 13px;
+                font-family: Arial;
+                color: #8899a6;
+            }
+
+        .tweet-text a {
+            padding-left: 2px;
+            padding-right: 4px;
+            color: #1b95e0;
+        }
+
+        .twit-pfl span.time {
+            position: relative;
+        }
+
+            .twit-pfl span.time:before {
+                content: ".";
+                float: left;
+                left: 4px;
+                position: relative;
+                top: -7px;
+            }
+
+        .twit-post {
+            float: left;
+            width: 100%;
+            padding: 12px;
+            border-bottom: 1px solid #e1e9ec;
+            box-sizing: border-box;
+        }
+
+        .twit-pfl-img {
+            float: left;
+            width: 10%;
+            box-sizing: border-box;
+            padding-right: 11px;
+        }
+
+        .twit-hold-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 48px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .twit-txt-cont {
+            float: left;
+            width: 90%;
+        }
+
+        .twit-pfl,
+        .js-tweet-text-container {
+            float: left;
+            width: 100%;
+            padding-right: 4px;
+            box-sizing: border-box;
+        }
+
+        p.tweet-text {
+            margin: 10px 0;
+            color: #292f33;
+            font: 14px/18px Arial,sans-serif;
+        }
+
+        .twit-post-img {
+            float: left;
+            width: 100%;
+        }
+
+            .twit-post-img img {
+                width: 100%;
+                height: auto;
+                float: left;
+                border: 1px solid #e5e5e5;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+        .twit-post .twit-post .twit-pfl-img {
+            width: 23.3%;
+        }
+
+        .twit-txt-cont div.twit-txt-cont {
+            width: 76.7%;
+        }
+
+        .twit-post div.twit-post {
+            border: 1px solid #e1e9ec;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 480px) {
+            .twit-pfl-img {
+                box-sizing: border-box;
+                clear: both;
+                display: table;
+                float: none;
+                margin: 5px auto;
+                padding-right: 0;
+                width: auto;
+            }
+
+            .twit-txt-cont {
+                float: left;
+                width: 100%;
+            }
+
+            .twit-pfl {
+                box-sizing: border-box;
+                clear: both;
+                display: table;
+                float: none;
+                margin: 0 auto;
+                padding-right: 0;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div style="max-width: 590px;" class="dummy-wrapper">
+            <div class="twit-main">
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/701591008534884352/83-nBG6F_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">t_nmurthy</a></span>
+                            <span class="username"><a href="#">@t_nmurthy</a></span>
+                            <span class="time"><a href="#">6/13/2016 10:44:52 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/Sutherland_HC"> @Sutherland_HC</a>: Two weeks until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Make sure to drop by our Certification Lounge for complimentary beverages &amp; snacks. That's…</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/555932413855932416/6V5i-_Vi_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Kathleen Harris</a></span>
+                            <span class="username"><a href="#">@ZBKath</a></span>
+                            <span class="time"><a href="#">6/13/2016 8:44:11 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/Experian_Health"> @Experian_Health</a>: Register now for 1 or more of our 8 sessions at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> <a href="https://t.co/4KLwAmh3Hr"> ow.ly/WMtM301dKDD</a>. <a href="https://twitter.com/search?q=%23revcycle&amp;src=hash"> #revcycle</a> <a href="https://twitter.com/search?q=%23healthIT&amp;src=hash"> #healthIT</a> https://t.co…</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ck28Km8XIAAQvuu.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/710872819782041600/xXWmhCvU_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Simple Truth</a></span>
+                            <span class="username"><a href="#">@yoursimpletruth</a></span>
+                            <span class="time"><a href="#">6/13/2016 7:27:19 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/rmielcarski"> @rmielcarski</a>: Will you be at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> this year? We will! Visit booth 1326 to say hi &amp; see what’s new <a href="https://twitter.com/HealthForumNews"> @HealthForumNews</a>! https://t.co…</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ck3O2GeVAAA_xqF.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/730747784211484675/p0tPUPnY_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Espy Services, Inc</a></span>
+                            <span class="username"><a href="#">@EspyServicesInc</a></span>
+                            <span class="time"><a href="#">6/13/2016 7:09:42 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Coming to <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Set up your appt. with us for a chance at some big tickets in <a href="https://twitter.com/search?q=%23Vegas&amp;src=hash"> #Vegas</a>! Contact <a href="https://t.co/CCGJJM4eTZ"> HFMA2016espyservices.com</a> today!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/378800000408103551/99fba70a3b3cb2912fc145d7af8d0204_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Matthew Owen</a></span>
+                            <span class="username"><a href="#">@mowenranger</a></span>
+                            <span class="time"><a href="#">6/13/2016 5:24:48 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/rmielcarski"> @rmielcarski</a>: Will you be at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> this year? We will! Visit booth 1326 to say hi &amp; see what’s new <a href="https://twitter.com/HealthForumNews"> @HealthForumNews</a>! https://t.co…</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ck3O2GeVAAA_xqF.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/694606015615102976/tlVuXzsw_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Rebecca Mielcarski</a></span>
+                            <span class="username"><a href="#">@rmielcarski</a></span>
+                            <span class="time"><a href="#">6/13/2016 5:01:13 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Will you be at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> this year? We will! Visit booth 1326 to say hi &amp; see what’s new <a href="https://twitter.com/HealthForumNews"> @HealthForumNews</a>! https://t.co/x2QVTS0cD6</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ck3O2GeVAAA_xqF.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/464885187893944321/hxDuL8Nt_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Experian Health</a></span>
+                            <span class="username"><a href="#">@Experian_Health</a></span>
+                            <span class="time"><a href="#">6/13/2016 3:39:36 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Register now for 1 or more of our 8 sessions at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> <a href="https://t.co/4KLwAmh3Hr"> ow.ly/WMtM301dKDD</a>. <a href="https://twitter.com/search?q=%23revcycle&amp;src=hash"> #revcycle</a> <a href="https://twitter.com/search?q=%23healthIT&amp;src=hash"> #healthIT</a> https://t.co/Uv2VUNvSn5</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ck28Km8XIAAQvuu.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/735159943393746944/LfDFmAEq_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">ManagedResourcesInc</a></span>
+                            <span class="username"><a href="#">@ManagedResInc</a></span>
+                            <span class="time"><a href="#">6/13/2016 3:35:45 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> is just around the corner and we are excited to see everyone there! Come by booth #1736 ! <a href="https://twitter.com/hfmaorg"> @hfmaorg</a> https://t.co/nJZEFiJdkx</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ck27SEYVAAAxfH_.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/464885187893944321/hxDuL8Nt_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Experian Health</a></span>
+                            <span class="username"><a href="#">@Experian_Health</a></span>
+                            <span class="time"><a href="#">6/13/2016 1:57:24 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Don't miss our 2 collections sessions at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>. More info and register at <a href="https://t.co/pzdq6lGfjR"> ow.ly/4DbG301dwQP</a> <a href="https://twitter.com/search?q=%23revcycle&amp;src=hash"> #revcycle</a> <a href="https://twitter.com/search?q=%23healthIT&amp;src=hash"> #healthIT</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/464885187893944321/hxDuL8Nt_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Experian Health</a></span>
+                            <span class="username"><a href="#">@Experian_Health</a></span>
+                            <span class="time"><a href="#">6/13/2016 1:26:40 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Attending <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Sign up for 6/27 session "Providing Self-service Patient Estimates" with .<a href="https://twitter.com/StClairHospital"> @StClairHospital</a> <a href="https://t.co/dgFRmUjWwM"> ow.ly/m74P300Z3qP</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/431108100393672704/CqlrKXmD_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">SutherlandHealthcare</a></span>
+                            <span class="username"><a href="#">@Sutherland_HC</a></span>
+                            <span class="time"><a href="#">6/13/2016 1:05:13 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Two weeks until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Make sure to drop by our Certification Lounge for complimentary beverages &amp; snacks. That's right, free food!!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/1268134438/Twitter_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Xtend Healthcare</a></span>
+                            <span class="username"><a href="#">@xtendhealthcare</a></span>
+                            <span class="time"><a href="#">6/13/2016 12:14:26 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">
+                                Relax with our certified service animals &amp; learn more about the fastest growing rev cycle company! <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>
+
+                                <a href="https://t.co/gKkRgiqyRT"> xtendhealthcare.net</a>
+                            </p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/646729742188613632/nhqGUyTL_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">3MHealthInformation</a></span>
+                            <span class="username"><a href="#">@3MHISNews</a></span>
+                            <span class="time"><a href="#">6/13/2016 12:02:04 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Going to <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Don't miss  Ladd Udy, Mercy Health &amp; 3M's Donna Smith talking HCCs &amp; <a href="https://twitter.com/search?q=%23pophealth&amp;src=hash"> #pophealth</a>, Tues. 2pm! <a href="https://t.co/Dvz81YVxck"> ow.ly/hcGy3019iIk</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/660151935505297408/_WDQ9JI1_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">VitalWare</a></span>
+                            <span class="username"><a href="#">@VitalWare</a></span>
+                            <span class="time"><a href="#">6/13/2016 11:44:02 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Schedule your 10-minute demo at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> and receive a $10 Starbucks gift card on us: <a href="https://t.co/0e87OYj4GO"> bit.ly/2358h51</a> https://t.co/jOaYOkBjSo</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ck2GP9bUkAI79Yp.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/530081483931656192/ly80emLO_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">St. Clair Hospital</a></span>
+                            <span class="username"><a href="#">@StClairHospital</a></span>
+                            <span class="time"><a href="#">6/13/2016 11:25:26 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/Experian_Health"> @Experian_Health</a>: Attending <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Sign up for 6/27 session "Providing Self-service Patient Estimates" with .<a href="https://twitter.com/StClairHospital"> @StClairHospital</a> htt…</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/730406990405619712/sALJ1fuI_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Brad Justus</a></span>
+                            <span class="username"><a href="#">@Brad_Justus</a></span>
+                            <span class="time"><a href="#">6/11/2016 2:45:38 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/hfmaorg"> @hfmaorg</a>: Great content from <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> but on-demand: <a href="https://twitter.com/search?q=%23ANItoGo&amp;src=hash"> #ANItoGo</a>. Save on time and travel expenses. Learn more. <a href="https://t.co/WqtVFNWcvr"> rlm.ag/Km5M9</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/692875723262930944/0mPQN5XC_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Steven Poole</a></span>
+                            <span class="username"><a href="#">@steven_spoole</a></span>
+                            <span class="time"><a href="#">6/11/2016 11:59:11 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/EspyServicesInc"> @EspyServicesInc</a>: Make sure your trip to <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> is planned &amp; ready to go! Official site here: <a href="https://t.co/51ku2NHIAW"> hfma.org/ANI/Home/</a> <a href="https://twitter.com/hfmaorg"> @hfmaorg</a> htt…</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkhZaAYXEAAXl7Q.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/733013822789718016/M2YGzczL_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Health Forum</a></span>
+                            <span class="username"><a href="#">@HealthForumNews</a></span>
+                            <span class="time"><a href="#">6/10/2016 2:49:02 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Join us for <a href="https://twitter.com/hfmaorg"> @hfmaorg</a> <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> in Vegas! We'll be raffling off a <a href="https://twitter.com/fitbit"> @fitbit</a> watch, so be sure to stop by our booth! https://t.co/pkctWlNw50</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CknT0rpXIAImSIP.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/446363046852558848/o-kfuRdE_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Kforce Inc</a></span>
+                            <span class="username"><a href="#">@Kforce</a></span>
+                            <span class="time"><a href="#">6/10/2016 1:38:51 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Our <a href="https://twitter.com/search?q=%23KforceFamily&amp;src=hash"> #KforceFamily</a> is headed to Vegas! Visit booth 717 at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> June 26-28 to jump start your <a href="https://twitter.com/search?q=%23RevenueCycle&amp;src=hash"> #RevenueCycle</a>! https://t.co/OmfkuyHQq7</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CknDwiRUoAASYsa.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/720289439617052672/f75NLzDa_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">MedSpeaks.com</a></span>
+                            <span class="username"><a href="#">@Med_Speaks</a></span>
+                            <span class="time"><a href="#">6/10/2016 1:02:39 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Find out what's driving <a href="https://twitter.com/search?q=%23Innovation&amp;src=hash"> #Innovation</a> at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>. Earn up to 25.5 CPEs! Learn more <a href="https://t.co/wG1KsFngeQ"> ow.ly/XH3g6</a> <a href="https://twitter.com/hfmaorg"> @HFMAorg</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/549270269416570881/WLNlwOz7_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Joanna Sapida, RN</a></span>
+                            <span class="username"><a href="#">@JoannaSapida</a></span>
+                            <span class="time"><a href="#">6/10/2016 1:02:39 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Find out what's driving <a href="https://twitter.com/search?q=%23Innovation&amp;src=hash"> #Innovation</a> at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>. Earn up to 25.5 CPEs! Learn more <a href="https://t.co/67FtjRKifd"> ow.ly/XH3g3</a> <a href="https://twitter.com/hfmaorg"> @HFMAorg</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/694606015615102976/tlVuXzsw_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Rebecca Mielcarski</a></span>
+                            <span class="username"><a href="#">@rmielcarski</a></span>
+                            <span class="time"><a href="#">6/10/2016 11:15:47 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Join us for <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> in Vegas! We'll be raffling a <a href="https://twitter.com/fitbit"> @fitbit</a> watch, so be sure to visit <a href="https://twitter.com/HealthForumNews"> @HealthForumNews</a> at 1326! https://t.co/HIBNtWdFX5</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkmjA7lVEAAkzKx.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/732633766280220674/IVgJOVSr_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">iMedX</a></span>
+                            <span class="username"><a href="#">@iMedX</a></span>
+                            <span class="time"><a href="#">6/10/2016 9:20:13 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Come see us at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> booth 1849 to learn more or talk with us now: <a href="https://t.co/3wkBzlAQbn"> bit.ly/1suVUSM</a> https://t.co/WAr1P4CgdX</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkmIj_1UgAE9QeW.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/733013822789718016/M2YGzczL_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Health Forum</a></span>
+                            <span class="username"><a href="#">@HealthForumNews</a></span>
+                            <span class="time"><a href="#">6/10/2016 7:10:01 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Join us for <a href="https://twitter.com/hfmaorg"> @hfmaorg</a> <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> in Vegas! We'll be raffling off a <a href="https://twitter.com/fitbit"> @fitbit</a> watch, so be sure to stop by our booth!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/501762658169671680/53lkxjTV_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Adreima</a></span>
+                            <span class="username"><a href="#">@AdreimaLLC</a></span>
+                            <span class="time"><a href="#">6/9/2016 4:39:15 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Join <a href="https://twitter.com/search?q=%23Adreima&amp;src=hash"> #Adreima</a> at <a href="https://twitter.com/search?q=%23hfma2016ani&amp;src=hash"> #hfma2016ani</a> June 28 when we present on the Changing Role of Revenue Cycle Leaders. <a href="https://t.co/z2zqHnfgdn"> lnkd.in/bpVWQfd</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/722879361796411392/d50UAg77_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HealthCare Scouts</a></span>
+                            <span class="username"><a href="#">@hcscoutsinc</a></span>
+                            <span class="time"><a href="#">6/9/2016 2:35:17 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">The <a href="https://twitter.com/search?q=%23scouts&amp;src=hash"> #scouts</a> will be out at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>. Visit booth 1731. <a href="https://twitter.com/search?q=%23scoutandabout&amp;src=hash"> #scoutandabout</a> <a href="https://twitter.com/search?q=%23toptalent&amp;src=hash"> #toptalent</a> <a href="https://twitter.com/search?q=%23scoutonthetown&amp;src=hash"> #scoutonthetown</a> <a href="https://twitter.com/search?q=%23Vegas&amp;src=hash"> #Vegas</a> https://t.co/hGpW6Pgeot</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkiHFr4UgAAM0rt.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/598570967577669635/lnwc0Zwx_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Conifer Health</a></span>
+                            <span class="username"><a href="#">@coniferhealth</a></span>
+                            <span class="time"><a href="#">6/9/2016 2:15:12 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> Don’t miss <a href="https://twitter.com/EricTopol"> @EricTopol</a>’s session, 6/27 at 8 AM, about <a href="https://twitter.com/search?q=%23individualizedmedicine&amp;src=hash"> #individualizedmedicine</a> and patient emancipation. https://t.co/trJKOCUwNQ</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkiCfIVWgAAs6LT.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HealthWide Solutions</a></span>
+                            <span class="username"><a href="#">@ThePXperts</a></span>
+                            <span class="time"><a href="#">6/9/2016 1:59:07 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> <a href="https://twitter.com/search?q=%23PatientHappinessSystem&amp;src=hash"> #PatientHappinessSystem</a> <a href="https://twitter.com/ThePXperts"> @ThePXperts</a> https://t.co/pBLoGv8Zw2</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckh-zr-VEAQYSh7.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HealthWide Solutions</a></span>
+                            <span class="username"><a href="#">@ThePXperts</a></span>
+                            <span class="time"><a href="#">6/9/2016 1:57:58 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">
+                                Everything that happens in Vegas, doesn’t have to stay in Vegas!
+                                Find out more in Booth 1264
+                                <a href="https://twitter.com/search?q=%23PatientHappinessScore&amp;src=hash"> #PatientHappinessScore</a> <a href="https://twitter.com/ThePXperts"> @ThePXperts</a> <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>
+                            </p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/674296979736821760/PKrTFPW5_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Corral Solutions</a></span>
+                            <span class="username"><a href="#">@CorralSolutions</a></span>
+                            <span class="time"><a href="#">6/9/2016 1:05:20 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Corral and <a href="https://twitter.com/AxiaMed"> @AxiaMed</a> will be at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> at booth #113 <a href="https://t.co/aNqBwOXmSw"> hubs.ly/H02-8yH0</a> https://t.co/EuPmQitJXs</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckhyf3xWUAURwYg.png>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/733675912068247552/t7v8i_KR_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Morgan Cummings</a></span>
+                            <span class="username"><a href="#">@MorganAtEspy</a></span>
+                            <span class="time"><a href="#">6/9/2016 11:16:53 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/EspyServicesInc"> @EspyServicesInc</a>: Make sure your trip to <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> is planned &amp; ready to go! Official site here: <a href="https://t.co/51ku2NHIAW"> hfma.org/ANI/Home/</a> <a href="https://twitter.com/hfmaorg"> @hfmaorg</a> htt…</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkhZaAYXEAAXl7Q.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/730747784211484675/p0tPUPnY_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Espy Services, Inc</a></span>
+                            <span class="username"><a href="#">@EspyServicesInc</a></span>
+                            <span class="time"><a href="#">6/9/2016 11:15:42 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Make sure your trip to <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> is planned &amp; ready to go! Official site here: <a href="https://t.co/51ku2NHIAW"> hfma.org/ANI/Home/</a> <a href="https://twitter.com/hfmaorg"> @hfmaorg</a> https://t.co/xauvhUj3Cr</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkhZaAYXEAAXl7Q.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/467320491393306624/0jRQMoif_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HPS</a></span>
+                            <span class="username"><a href="#">@HPS_media</a></span>
+                            <span class="time"><a href="#">6/9/2016 11:00:29 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">The countdown is on! Only two weeks until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>. Don't forget to stop by booth 1828! https://t.co/zAdqoKoe4d</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkhV7GIUkAEcxsd.png>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/549270269416570881/WLNlwOz7_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Joanna Sapida, RN</a></span>
+                            <span class="username"><a href="#">@JoannaSapida</a></span>
+                            <span class="time"><a href="#">6/9/2016 9:31:27 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://twitter.com/EricTopol"> @EricTopol</a> of <a href="https://twitter.com/scrippsresearch"> @scrippsresearch</a> on The Future of Medicine is in Your Hands at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> by <a href="https://twitter.com/hfmaorg"> @HFMAorg</a> Learn more <a href="https://t.co/FSw3hmINht"> ow.ly/XH4c3</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/720289439617052672/f75NLzDa_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">MedSpeaks.com</a></span>
+                            <span class="username"><a href="#">@Med_Speaks</a></span>
+                            <span class="time"><a href="#">6/9/2016 9:31:27 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://twitter.com/EricTopol"> @EricTopol</a> of <a href="https://twitter.com/scrippsresearch"> @scrippsresearch</a> on The Future of Medicine is in Your Hands at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> by <a href="https://twitter.com/hfmaorg"> @HFMAorg</a> Learn more <a href="https://t.co/1MGSWiN63Z"> ow.ly/XH4c5</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/732633766280220674/IVgJOVSr_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">iMedX</a></span>
+                            <span class="username"><a href="#">@iMedX</a></span>
+                            <span class="time"><a href="#">6/9/2016 8:55:53 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/hfmaorg"> @hfmaorg</a>: Top content and industry experts from <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> available online with <a href="https://twitter.com/search?q=%23ANItoGo&amp;src=hash"> #ANItoGo</a>. Plus, earn CPEs. <a href="https://t.co/rN0KX7stdw"> rlm.ag/2jL2ZR</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/596174657818001408/0wI2Slt__normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Social Supply Chain</a></span>
+                            <span class="username"><a href="#">@MedSupplyChain</a></span>
+                            <span class="time"><a href="#">6/9/2016 8:41:11 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://t.co/IT1aCXmNFQ"> MedSupplyChain.com</a> : Top content and industry experts from <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> available online with <a href="https://twitter.com/search?q=%23ANItoGo&amp;src=hash"> #ANItoGo</a>. Plus,… <a href="https://t.co/Ik7yInNk4y"> dlvr.it/LWdKCN</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/479026144264462337/4IWa2uBj_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HFMA</a></span>
+                            <span class="username"><a href="#">@hfmaorg</a></span>
+                            <span class="time"><a href="#">6/9/2016 8:36:16 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Top content and industry experts from <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> available online with <a href="https://twitter.com/search?q=%23ANItoGo&amp;src=hash"> #ANItoGo</a>. Plus, earn CPEs. <a href="https://t.co/rN0KX7stdw"> rlm.ag/2jL2ZR</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/732633766280220674/IVgJOVSr_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">iMedX</a></span>
+                            <span class="username"><a href="#">@iMedX</a></span>
+                            <span class="time"><a href="#">6/9/2016 8:12:00 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">When it comes to technology we build it, we own it, and we support it. This means lower costs and better support. <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/646729742188613632/nhqGUyTL_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">3MHealthInformation</a></span>
+                            <span class="username"><a href="#">@3MHISNews</a></span>
+                            <span class="time"><a href="#">6/9/2016 8:02:08 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Going to <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Stop by Booth 204 to see what your organization's data says about you! More details: <a href="https://t.co/fw9bTzu4cZ"> ow.ly/EVWK300P8fA</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/587305668211671040/DDCaVQaU_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Samantha Swift</a></span>
+                            <span class="username"><a href="#">@SamanthaASwift1</a></span>
+                            <span class="time"><a href="#">6/8/2016 8:31:25 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Definitely make sure to stop by Health Forum's booth at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>!   <a href="https://t.co/tSA4D1a88E"> twitter.com/rmielcarski/st…</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/731985313149550592/beQWq056_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Piyush Kedia</a></span>
+                            <span class="username"><a href="#">@pkedia9</a></span>
+                            <span class="time"><a href="#">6/8/2016 3:23:30 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/SwervePayHealth"> @SwervePayHealth</a>: Counting down the days until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Be sure to stop by Booth #2040 to say hi!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/694606015615102976/tlVuXzsw_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Rebecca Mielcarski</a></span>
+                            <span class="username"><a href="#">@rmielcarski</a></span>
+                            <span class="time"><a href="#">6/8/2016 3:07:50 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Attending <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? I'll be there! Stop by our booth to learn more about what's new with <a href="https://twitter.com/HealthForumNews"> @HealthForumNews</a> https://t.co/1YTRflWLWN</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkdE8nNVEAAi8Fa.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/693988555085975556/HDWJceNa_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Jaeme Adams</a></span>
+                            <span class="username"><a href="#">@jaemeadams</a></span>
+                            <span class="time"><a href="#">6/8/2016 2:57:22 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/SwervePayHealth"> @SwervePayHealth</a>: Counting down the days until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Be sure to stop by Booth #2040 to say hi!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://abs.twimg.com/sticky/default_profile_images/default_profile_0_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HealthWide Solutions</a></span>
+                            <span class="username"><a href="#">@ThePXperts</a></span>
+                            <span class="time"><a href="#">6/8/2016 2:32:35 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">
+                                Do You Know Your Patient Happiness Score?
+                                Learn more in Booth 1264 <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>
+
+                                <a href="https://twitter.com/search?q=%23PatientHappinessScore&amp;src=hash"> #PatientHappinessScore</a> <a href="https://twitter.com/ThePXperts"> @ThePXperts</a> https://t.co/YmwwAAJ9ya
+                            </p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckc84MMVEAAs_1n.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/677969488692666368/YK7YGg1h_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Amy E.Phillips</a></span>
+                            <span class="username"><a href="#">@AmyEPhillips4</a></span>
+                            <span class="time"><a href="#">6/8/2016 1:44:06 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/VitalWare"> @VitalWare</a>: Learn how you can celebrate this year at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>: <a href="https://t.co/hqmW6VNWHV"> bit.ly/1UEK2XQ</a> https://t.co/qOmT3zbISr</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckctwz2VEAEfGjL.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/525358479532249088/5gF9krDo_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Naomi Garnice</a></span>
+                            <span class="username"><a href="#">@NaomiGarnice</a></span>
+                            <span class="time"><a href="#">6/8/2016 1:34:17 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/VitalWare"> @VitalWare</a>: Learn how you can celebrate this year at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>: <a href="https://t.co/hqmW6VNWHV"> bit.ly/1UEK2XQ</a> https://t.co/qOmT3zbISr</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckctwz2VEAEfGjL.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/660151935505297408/_WDQ9JI1_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">VitalWare</a></span>
+                            <span class="username"><a href="#">@VitalWare</a></span>
+                            <span class="time"><a href="#">6/8/2016 1:26:32 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Learn how you can celebrate this year at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>: <a href="https://t.co/hqmW6VNWHV"> bit.ly/1UEK2XQ</a> https://t.co/qOmT3zbISr</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckctwz2VEAEfGjL.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/674296979736821760/PKrTFPW5_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Corral Solutions</a></span>
+                            <span class="username"><a href="#">@CorralSolutions</a></span>
+                            <span class="time"><a href="#">6/8/2016 1:09:22 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Looking for tips for this years <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> show in Vegas? Look no further! <a href="https://t.co/WEay3NNMtp"> hubs.ly/H03bSkt0</a> https://t.co/VGILxHM1sl</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckcp1JpWkAAnkdZ.png>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/474553616611553280/sbTPRiJn_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">IMA Consulting</a></span>
+                            <span class="username"><a href="#">@IMAConsulting</a></span>
+                            <span class="time"><a href="#">6/8/2016 12:56:04 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">We're counting down the days until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Looking forward to seeing everyone there! <a href="https://twitter.com/search?q=%23HFMA&amp;src=hash"> #HFMA</a> <a href="https://twitter.com/search?q=%23healthcare&amp;src=hash"> #healthcare</a> <a href="https://t.co/IZu1w8cdiZ"> hfma.org/ANI/</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/464885187893944321/hxDuL8Nt_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Experian Health</a></span>
+                            <span class="username"><a href="#">@Experian_Health</a></span>
+                            <span class="time"><a href="#">6/8/2016 12:55:19 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Don't miss our 6/28 <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> session w/.<a href="https://twitter.com/AltruHealth"> @AltruHealth</a> "Increase Self-Pay Collections &amp; Manage Vendor Compliance"  <a href="https://t.co/ACwG9IGfzC"> ow.ly/RhFF300Z3Aj</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/694606863594188800/S20KScrF_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HRSErase</a></span>
+                            <span class="username"><a href="#">@HRSErase</a></span>
+                            <span class="time"><a href="#">6/8/2016 12:55:19 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Come see us <a href="https://twitter.com/hfmaorg"> @hfmaorg</a> <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> booth #1949. We look forward to seeing you there.</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/652529257873317889/-hm-4F6E_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Aria Marketing</a></span>
+                            <span class="username"><a href="#">@AriaMarketing</a></span>
+                            <span class="time"><a href="#">6/8/2016 9:43:05 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">We’re counting down the days until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Be sure to attend presentations from our clients <a href="https://twitter.com/craneware"> @Craneware</a>, <a href="https://twitter.com/KaufmanHall"> @KaufmanHall</a> &amp; <a href="https://twitter.com/PressGaney"> @PressGaney</a>!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/732633766280220674/IVgJOVSr_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">iMedX</a></span>
+                            <span class="username"><a href="#">@iMedX</a></span>
+                            <span class="time"><a href="#">6/8/2016 9:09:14 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Attending <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Come by booth 1849 to learn how we can find growth opportunities: <a href="https://t.co/FCSoBQrRxT"> bit.ly/1XgUqJsd</a>. https://t.co/PThGI3QaZ4</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/Ckby3ykW0AAL6Pp.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/682592513073393664/B6_h6x5e_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HCFS Inc.</a></span>
+                            <span class="username"><a href="#">@HCFSInc</a></span>
+                            <span class="time"><a href="#">6/7/2016 11:20:12 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">HFMA ANI is this month! Stop by the HCFS booth 1844 <a href="https://t.co/N3JaZyHydJ"> ow.ly/JlF0300nFtC</a> <a href="https://twitter.com/search?q=%23hcfsinc&amp;src=hash"> #hcfsinc</a> <a href="https://twitter.com/search?q=%23hcfsevex&amp;src=hash"> #hcfsevex</a> <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/740333945280028672/cs2VpvQ4_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HFMA HOA</a></span>
+                            <span class="username"><a href="#">@HFMA_HOA</a></span>
+                            <span class="time"><a href="#">6/7/2016 8:04:20 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/hfmaorg"> @hfmaorg</a>: Great content from <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> but on-demand: <a href="https://twitter.com/search?q=%23ANItoGo&amp;src=hash"> #ANItoGo</a>. Save on time and travel expenses. Learn more. <a href="https://t.co/WqtVFNWcvr"> rlm.ag/Km5M9</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/740299861694763008/uI0Nf8OH_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Elizabeth F.</a></span>
+                            <span class="username"><a href="#">@elizamarissa324</a></span>
+                            <span class="time"><a href="#">6/7/2016 2:36:01 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">RT <a href="https://twitter.com/SwervePayHealth"> @SwervePayHealth</a>: Counting down the days until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Be sure to stop by Booth #2040 to say hi!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/587437980257652736/4Zpql4q__normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">SwervePay Health</a></span>
+                            <span class="username"><a href="#">@SwervePayHealth</a></span>
+                            <span class="time"><a href="#">6/7/2016 2:35:29 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Counting down the days until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Be sure to stop by Booth #2040 to say hi!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/711971165238116352/6Q5AnNjX_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">MedeAnalytics</a></span>
+                            <span class="username"><a href="#">@MedeAnalytics</a></span>
+                            <span class="time"><a href="#">6/7/2016 1:37:03 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Our client <a href="https://twitter.com/BaptistHealthAL"> @BaptistHealthAL</a> will be speaking at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Preview their session through this sneak peek-blog: <a href="https://t.co/p3CeV4LOIr"> bit.ly/1VKwi06</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/2505288725/NOWicon125x125_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">HealthcareNOWradio</a></span>
+                            <span class="username"><a href="#">@HCNowRadio</a></span>
+                            <span class="time"><a href="#">6/7/2016 10:14:29 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Register for <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> Conference 6/26-6/29 in Vegas! <a href="https://t.co/k08cYkkS3S"> healthitanswers.net/event/hfmas-20…</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/646729742188613632/nhqGUyTL_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">3MHealthInformation</a></span>
+                            <span class="username"><a href="#">@3MHISNews</a></span>
+                            <span class="time"><a href="#">6/7/2016 10:02:19 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Going to <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Stop by Booth 204 for free Revenue Cycle Score Card! More details: <a href="https://t.co/fw9bTzu4cZ"> ow.ly/EVWK300P8fA</a> https://t.co/2r8Fay6nQa</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkW1braWEAAYt7p.png>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/527521195617316864/NIxoIBro_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Human Arc</a></span>
+                            <span class="username"><a href="#">@HumanArc_</a></span>
+                            <span class="time"><a href="#">6/7/2016 9:40:02 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Are you ready to get out of the box at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> and explore the incredible with us? Stop by Booth 1931 for more info!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/720289439617052672/f75NLzDa_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">MedSpeaks.com</a></span>
+                            <span class="username"><a href="#">@Med_Speaks</a></span>
+                            <span class="time"><a href="#">6/7/2016 9:02:53 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Find out what's driving <a href="https://twitter.com/search?q=%23Innovation&amp;src=hash"> #Innovation</a> at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>. Earn up to 25.5 CPEs! Learn more <a href="https://t.co/gnpqwNaMAw"> ow.ly/XH3dB</a> <a href="https://twitter.com/hfmaorg"> @HFMAorg</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/549270269416570881/WLNlwOz7_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Joanna Sapida, RN</a></span>
+                            <span class="username"><a href="#">@JoannaSapida</a></span>
+                            <span class="time"><a href="#">6/7/2016 9:02:53 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Find out what's driving <a href="https://twitter.com/search?q=%23Innovation&amp;src=hash"> #Innovation</a> at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>. Earn up to 25.5 CPEs! Learn more <a href="https://t.co/PTPHLwPLGc"> ow.ly/XH3dt</a> <a href="https://twitter.com/hfmaorg"> @HFMAorg</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/464885187893944321/hxDuL8Nt_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Experian Health</a></span>
+                            <span class="username"><a href="#">@Experian_Health</a></span>
+                            <span class="time"><a href="#">6/6/2016 5:43:29 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Attending <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Sign up for 6/27 session "Providing Self-service Patient Estimates" with .<a href="https://twitter.com/StClairHospital"> @StClairHospital</a> <a href="https://t.co/dgFRmUjWwM"> ow.ly/m74P300Z3qP</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/674296979736821760/PKrTFPW5_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Corral Solutions</a></span>
+                            <span class="username"><a href="#">@CorralSolutions</a></span>
+                            <span class="time"><a href="#">6/6/2016 4:02:51 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Did you know that 43 Million Americans have unpaid medical bills? <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/660602792894140416/bReoTXIZ_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Sarah Armand</a></span>
+                            <span class="username"><a href="#">@whatsarahasaid</a></span>
+                            <span class="time"><a href="#">6/6/2016 2:13:28 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">.<a href="https://twitter.com/hfmaorg"> @hfmaorg</a> Challenge for <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> attendees during the reception at Madame Tussaud's: how many stars can you get selfies with?</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/738444542592966657/NGY1_JI2_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">MCG</a></span>
+                            <span class="username"><a href="#">@MCG_Health</a></span>
+                            <span class="time"><a href="#">6/6/2016 2:07:02 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Meet <a href="https://twitter.com/search?q=%23MCG&amp;src=hash"> #MCG</a> @ the <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> event in Las Vegas, June 26-29. Stop @ booth #548 for giveaways &amp; learn how we improve <a href="https://twitter.com/search?q=%23healthcare&amp;src=hash"> #healthcare</a>! <a href="https://twitter.com/hfmaorg"> @hfmaorg</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/660602792894140416/bReoTXIZ_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Sarah Armand</a></span>
+                            <span class="username"><a href="#">@whatsarahasaid</a></span>
+                            <span class="time"><a href="#">6/6/2016 2:04:37 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Getting some <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> first time attendee tips from Jay Keltner and <a href="https://twitter.com/janicewiitala"> @janicewiitala</a> from <a href="https://twitter.com/hfmaorg"> @hfmaorg</a>. Can't wait!!</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/425043429756657664/bxdC1hmH_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">AxiaMed</a></span>
+                            <span class="username"><a href="#">@AxiaMed</a></span>
+                            <span class="time"><a href="#">6/6/2016 12:40:32 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Did you know: collection agencies could charge up to 30% of the medical debt collected? <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/646729742188613632/nhqGUyTL_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">3MHealthInformation</a></span>
+                            <span class="username"><a href="#">@3MHISNews</a></span>
+                            <span class="time"><a href="#">6/6/2016 12:00:38 PM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Getting excited for <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>? Learn more about our expert speakers here: <a href="https://t.co/TAHU0guGSF"> ow.ly/VzoQ300Y6s5</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/431108100393672704/CqlrKXmD_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">SutherlandHealthcare</a></span>
+                            <span class="username"><a href="#">@Sutherland_HC</a></span>
+                            <span class="time"><a href="#">6/6/2016 10:15:11 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Three weeks until <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a>! Make sure to drop by our Certification Lounge for free giveaways &amp; to learn more about <a href="https://twitter.com/search?q=%23healthcare&amp;src=hash"> #healthcare</a>’s new era</p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/674296979736821760/PKrTFPW5_normal.png">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Corral Solutions</a></span>
+                            <span class="username"><a href="#">@CorralSolutions</a></span>
+                            <span class="time"><a href="#">6/6/2016 10:12:38 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">Looking for tips for this years <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> show in Vegas? Look no further! <a href="https://t.co/Ix9zTvHPbc"> hubs.ly/H03bRRl0</a> https://t.co/ncHaAigcFq</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkRuNAQWgAAm5ZF.png>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/549270269416570881/WLNlwOz7_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Joanna Sapida, RN</a></span>
+                            <span class="username"><a href="#">@JoannaSapida</a></span>
+                            <span class="time"><a href="#">6/6/2016 10:02:43 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://twitter.com/EricTopol"> @EricTopol</a> of <a href="https://twitter.com/scrippsresearch"> @scrippsresearch</a> on The Future of Medicine is in Your Hands at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> by <a href="https://twitter.com/hfmaorg"> @HFMAorg</a> Learn more <a href="https://t.co/LMSkeWe1qV"> ow.ly/XH4aF</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/720289439617052672/f75NLzDa_normal.jpg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">MedSpeaks.com</a></span>
+                            <span class="username"><a href="#">@Med_Speaks</a></span>
+                            <span class="time"><a href="#">6/6/2016 10:02:43 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text"><a href="https://twitter.com/EricTopol"> @EricTopol</a> of <a href="https://twitter.com/scrippsresearch"> @scrippsresearch</a> on The Future of Medicine is in Your Hands at <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> by <a href="https://twitter.com/hfmaorg"> @HFMAorg</a> Learn more <a href="https://t.co/hYboVdvcuy"> ow.ly/XH4aK</a></p>
+                        </div>
+                        <div class="twit-post-img">
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="twit-post">
+                    <div class="twit-pfl-img">
+                        <img alt="" src="http://pbs.twimg.com/profile_images/458983097397022720/xzguQcte_normal.jpeg">
+                    </div>
+                    <div class="twit-txt-cont">
+                        <div class="twit-pfl">
+                            <span class="acc_name"><a href="#">Rycan</a></span>
+                            <span class="username"><a href="#">@Rycan</a></span>
+                            <span class="time"><a href="#">6/6/2016 9:40:32 AM</a></span>
+                        </div>
+                        <div class="js-tweet-text-container">
+                            <p class="tweet-text">3 more weeks until the <a href="https://twitter.com/search?q=%23HFMA2016ANI&amp;src=hash"> #HFMA2016ANI</a> Conference in Las Vegas! Stop by booth #1825 &amp; register for our booth giveaway! https://t.co/tgI4HsSQsJ</p>
+                        </div>
+                        <div class="twit-post-img">
+                            <img style="max-height: 506px; max-width: 506px;" src=https://pbs.twimg.com/media/CkRm2kIW0AAZ7NV.jpg>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
